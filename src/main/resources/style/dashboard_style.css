@@ -1,0 +1,413 @@
+
+
+#mainVBox .button {
+    -fx-background-color: #22577A;
+    -fx-text-fill: white;
+    -fx-border-width: 0;
+}
+
+#mainVBox .button:hover {
+    -fx-border-color: white; /* Add a white border on hover */
+    -fx-border-width: 2px; /* Set border width on hover */
+}
+
+
+
+#mainVBox .button.button-selected {
+    -fx-background-color: #38A3A5 !important; /* Change background color for selected state */
+    -fx-text-fill: white;
+}
+
+
+#mainVBox .button-selected:hover {
+    -fx-background-color: #22577A;
+    -fx-text-fill: white;
+    -fx-border-width: 2px;
+    -fx-border-color: white;
+}
+
+#infoBox {
+    -fx-spacing: 20; /* Adjust the spacing between elements */
+    -fx-padding: 20; /* Add padding to the HBox */
+    -fx-background-color: #FFFFFF; /* Set background color for the HBox */
+    -fx-background-radius: 10; /* Set the radius for rounded corners */
+}
+
+
+
+
+.textLabel, #nbrAccountsText, #TotalBalanceText, #nbrTransactionText {
+    -fx-font-size: 14; /* Set font size for the labels */
+    -fx-fill: #333333; /* Set text color for the labels (black) */
+}
+
+.textValue, #nbrAccounts, #totalBalance, #nbrTransactions {
+    -fx-font-size: 24; /* Set font size for the values */
+    -fx-font-weight: bold;
+    /* Make the values bold */
+}
+
+#nbrAccounts {
+    -fx-fill: #38A3A5; /* Set text color for the Number of Accounts value (blue) */
+}
+
+#totalBalance {
+    -fx-fill: #57CC99; /* Set text color for the Total Balance value (green) */
+}
+
+#nbrTransactions {
+    -fx-fill: #E74C3C; /* Set text color for the Number of Transactions value (red) */
+}
+
+
+#Accountsinformation {
+    -fx-background-color: #FFFFFF; /* Set background color for the Accountsinformation AnchorPane */
+    -fx-background-radius: 10; /* Set the radius for rounded corners */
+    -fx-padding: 20; /* Add padding to the AnchorPane */
+}
+
+#accInterface {
+    -fx-background-color: #FFFFFF;
+}
+
+#MenuOfAccounts {
+    -fx-background-color: #22577A; /* Set background color for MenuButton */
+    -fx-text-fill: white; /* Set text color for MenuButton */
+    -fx-background-radius: 10;
+}
+#MenuOfAccounts .label {
+    -fx-text-fill: white;
+}
+#MenuOfAccounts .menu-item {
+    -fx-background-color: #38A3A5; /* Set background color for MenuItems */
+    -fx-text-fill: white; /* Set text color for MenuItems */
+}
+
+#iconOfAccount {
+    -fx-fit-height: 28.0; /* Set fit height for the account icon */
+    -fx-fit-width: 70.0; /* Set fit width for the account icon */
+}
+
+#typeOfAccount {
+    -fx-font-size: 14; /* Set font size for the typeOfAccount Text */
+    -fx-fill: #333333; /* Set text color for the typeOfAccount Text (black) */
+}
+
+#balanceOfAccount {
+    -fx-font-size: 40; /* Set font size for the balanceOfAccount Text */
+    -fx-fill: #2ecc71 ; /* Set text color for the balanceOfAccount Text (black) */
+}
+
+#accountOperations {
+    -fx-background-color: #22577A; /* Set background color */
+    -fx-text-fill: white; /* Set text color */
+    -fx-font-size: 14; /* Set font size */
+    -fx-pref-width: 100; /* Set preferred width */
+    -fx-pref-height: 30; /* Set preferred height */
+    -fx-border-width: 0; /* Remove border */
+    -fx-background-radius: 10;
+}
+
+#accountOperations:hover {
+    -fx-background-color: #38A3A5; /* Set background color on hover */
+}
+
+
+#TableContainer {
+    -fx-pref-height: 100%;
+    -fx-pref-width: 100%;
+    -fx-background-color: white ;
+}
+
+#firstLine1 {
+    -fx-stroke: #22577A; /* Set stroke color for the line */
+    -fx-stroke-width: 0.5px; /* Set stroke width for the line */
+}
+
+#firstLine {
+    -fx-stroke: #22577A; /* Set stroke color for the line */
+    -fx-stroke-width: 0.5px; /* Set stroke width for the line */
+}
+
+#transactionTable .column-header .label {
+    -fx-background-color: #22577A; /* Set header background color */
+    -fx-text-fill: white; /* Set header text color */
+}
+
+/* Style TableView header cells */
+#transactionTable .column-header {
+    -fx-background-color: #22577A ; /* Set header background color */
+    -fx-text-fill: white; /* Set header text color */
+}
+
+/* Style TableView cells for each column */
+#transactionTable .dateColumn .table-cell {
+    -fx-background-color: #22577A; /* Set cell background color */
+    -fx-text-fill: #f0f0f0; /* Set cell text color */
+}
+
+#transactionTable .typeColumn .table-cell {
+    -fx-background-color: #22577A; /* Set cell background color */
+    -fx-text-fill: #f0f0f0; /* Set cell text color */
+}
+
+#transactionTable .descriptionColumn .table-cell {
+    -fx-background-color: #22577A; /* Set cell background color */
+    -fx-text-fill: #f0f0f0; /* Set cell text color */
+}
+
+#transactionTable .amountColumn .table-cell {
+    -fx-background-color: #22577A; /* Set cell background color */
+    -fx-text-fill: #f0f0f0; /* Set cell text color */
+}
+
+#transactionTable .fromAccountColumn .table-cell {
+    -fx-background-color: #22577A; /* Set cell background color */
+    -fx-text-fill: #f0f0f0; /* Set cell text color */
+}
+
+#transactionTable .toAccountColumn .table-cell {
+    -fx-background-color: #22577A; /* Set cell background color */
+    -fx-text-fill: #f0f0f0; /* Set cell text color */
+}
+
+#transactionTable .categoryNameColumn .table-cell {
+    -fx-background-color: #22577A; /* Set cell background color */
+    -fx-text-fill: #f0f0f0; /* Set cell text color */
+}
+
+#transactionTable .payeeNameColumn .table-cell {
+    -fx-background-color: #22577A; /* Set cell background color */
+    -fx-text-fill: #f0f0f0; /* Set cell text color */
+}
+
+/* Optional: Hover effect for cells */
+#transactionTable .table-row-cell:hover .table-cell{
+    -fx-background-color: #22577A; /* Set hover background color */
+    -fx-text-fill: #e6f0f8;
+}
+
+#addTransactionButton, #fileImportButton {
+    -fx-background-color: white;
+    -fx-text-fill: black;
+    -fx-border-color: black; /* Add border color if you want a border */
+    -fx-border-width: 0; /* Set border width */
+    -fx-pref-width: 140; /* Set preferred width */
+    -fx-pref-height: 30; /* Set preferred height */
+    -fx-font-size: 12; /* Set font size */
+
+}
+#addTransactionButton:hover, #fileImportButton:hover {
+    -fx-underline: true;
+}
+
+
+#viewButton {
+    -fx-background-color: #22577A; /* Blue background for View button */
+    -fx-text-fill: white; /* White text color for View button */
+    -fx-background-radius: 10;
+
+}
+
+#searchBar {
+    -fx-background-color: white; /* White background for search bar */
+    -fx-border-color: #22577A; /* Black border color for search bar */
+    -fx-text-fill: black; /* Black text color for search bar */
+    -fx-border-radius: 2;
+}
+
+#searchBar {
+    -fx-pref-width: 150; /* Set preferred width for search bar */
+}
+
+#transactionTable .table-row-cell:selected {
+    -fx-background-color: #38A3A5; /* Set selected row background color */
+    -fx-text-fill: white; /* Set selected row text color */
+}
+
+#viewButton:hover {
+    -fx-background-color: #38A3A5; /* Set the desired color when hovered */
+    -fx-text-fill: white; /* Set the text color when hovered */
+}
+
+
+#anchorPane {
+    -fx-background-color: #FFFFFF;
+
+    -fx-background-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 10; /* Add padding to the AnchorPane */
+    -fx-margin: 10; /* Add
+
+
+}
+#accountsContainer .account-pane {
+    -fx-padding: 10; /* Add padding around each account pane in accountsContainer */
+}
+#pageAcc #allAccountsTitle #accountsOverview {
+    -fx-fill: #4285f4; /* Blue color */
+    -fx-font-size: 18;
+
+}
+
+#allAccountsTitle {
+    -fx-font-size: 20;
+    -fx-fill: #4285f4; /* Blue color, change as needed */
+    /* Add more styling properties as needed */
+}
+
+#accountsOverview {
+    -fx-font-size: 20;
+    -fx-fill: #cc0000; /* Red color, change as needed */
+    /* Add more styling properties as needed */
+}
+#anchorPane:hover {
+    -fx-background-color: #38A3A5;
+
+}
+
+#nameLabel,
+#typeLabel,
+#descriptionLabel {
+    -fx-text-fill: black;
+}
+#balanceLabel{
+    -fx-font-size: 40; /* Set font size for the balanceOfAccount Text */
+    -fx-text-fill: #2ecc71
+}
+
+#anchorPane:hover #nameLabel,
+#anchorPane:hover #typeLabel,
+#anchorPane:hover #descriptionLabel,
+#anchorPane:hover #balanceLabel{
+
+    -fx-text-fill: white;
+}
+
+#scrollPaneCon {
+
+}
+
+
+#accountsContainer .account-pane {
+    -fx-spacing: 20;
+
+    -fx-background-color: white;
+}
+#accountsContainer {
+    -fx-spacing: 20;
+}
+
+
+
+
+#addAccountButton {
+    -fx-background-color: #22577A; /* Blue background for View button */
+    -fx-text-fill: white; /* White text color for View button */
+}
+#managePayeesButt {
+    -fx-background-color: #38A3A5; /* Blue background for View button */
+    -fx-text-fill: white; /* White text color for View button */
+}
+
+
+
+
+#exchangerateContainer {
+    -fx-background-color: white;
+    -fx-border-color: #22577A; /* Border color */
+    -fx-border-width: 2; /* Border width */
+    -fx-border-radius: 10; /* Border radius */
+    -fx-padding: 10; /* Padding inside the border */
+
+}
+
+#exchangerateTitle {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-fill: #22577A; /* Text color */
+}
+
+#walletSettingsContainer {
+    -fx-background-color: white;
+    -fx-border-color: #22577A; /* Border color */
+    -fx-border-width: 2; /* Border width */
+    -fx-border-radius: 10; /* Border radius */
+    -fx-padding: 10; /* Padding inside the border */
+}
+
+#WalletSettingsTitle {
+    -fx-font-size: 16;
+    -fx-font-weight: bold;
+    -fx-fill: #22577A; /* Text color */
+}
+#statsVboxContainer {
+    -fx-spacing: 20; /* Add spacing between children (containers) */
+}
+
+#incomevexpenseContainer {
+
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+#incomevexpenseContainer #titleChart1 {
+    -fx-fill: #4285f4; /* Blue color */
+    -fx-font-size: 18; /* Set the font size for the title text */
+    /* Add other styling properties as needed */
+}
+
+#incomevexpenseContainer #totalIncomeText {
+    -fx-fill: green; /* Set the color for income text */
+}
+
+#incomevexpenseContainer #totalExpensesText {
+    -fx-fill: red; /* Set the color for expense text */
+}
+
+#incomevexpenseContainer #surplusDeficitText {
+    -fx-fill: #4285f4;
+}
+#incomevexpenseContainer .chart-legend-item-symbol.data0 {
+    -fx-background-color: green; /* Set color for Income legend item */
+}
+
+#incomevexpenseContainer .chart-legend-item-symbol.data1 {
+    -fx-background-color: red; /* Set color for Expenses legend item */
+}
+
+#overviewStatContainer {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-padding: 10;
+}
+#overviewStatContainer #secondChartTitle {
+    -fx-fill: #4285f4; /* Blue color */
+    -fx-font-size: 18; /* Set the font size for the title text */
+    /* Add other styling properties as needed */
+}
+
+
+#combinedBalanceChart {
+    -fx-background-color: white;
+
+}
+
+
+#combinedBalanceChart .chart-plot-background {
+    -fx-background-color: #ffffff; /* Set the plot area background color */
+}
+
+#combinedBalanceChart .axis {
+    -fx-stroke: #333333; /* Set the axis color */
+}
+
+#combinedBalanceChart .axis-label {
+    -fx-text-fill: #333333; /* Set the axis label color */
+}
+
+
+
+
+
+

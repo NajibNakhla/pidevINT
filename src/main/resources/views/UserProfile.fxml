@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="626.0" prefWidth="619.0" style="-fx-background-color: #FFFFFF;" stylesheets="@../style/dashboard_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controles.UserProfile">
+   <children>
+      <AnchorPane fx:id="MenuDashboardAnchor" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <VBox fx:id="mainVBox" prefHeight="626.0" prefWidth="208.0" style="-fx-background-color: #22577A;">
+               <children>
+                  <ImageView fx:id="pennywiseLOGO" fitHeight="135.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/427168444_1124948528503302_6877607100137863677_n.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Button fx:id="profile" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Profile" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/user (1).png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="overview" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" styleClass="button button-selected" text="Overview" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="budget" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Budget" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/cash-flow.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="reports" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Reports" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/bar-chart.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="accounts" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Accounts" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/credit-card.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="debts" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Debts" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/429611592_712873760708784_6488396363910430578_n.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="wishlist" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="WishList" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/429118711_436539108708361_2997159549088655544_n.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="todo" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="TODO" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/429609917_1566263337459780_477684233973583788_n.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="settings" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Settings" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/settings.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+                  <Button fx:id="signout" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Sign Out" textFill="WHITE">
+                     <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                           <image>
+                              <Image url="@../icons/logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <ImageView fx:id="userImage" fitHeight="140.0" fitWidth="186.0" layoutX="228.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true" />
+      <Button layoutX="442.0" layoutY="118.0" mnemonicParsing="false" onAction="#UploadPhoto" text="Upload Photo" />
+      <Pane layoutX="206.0" layoutY="178.0" prefHeight="257.0" prefWidth="415.0" style="-fx-background-color: #22577A;">
+         <children>
+            <TextField fx:id="fNameField" layoutX="83.0" layoutY="25.0" prefHeight="25.0" prefWidth="243.0" />
+            <TextField fx:id="lNameField" layoutX="83.0" layoutY="69.0" prefHeight="25.0" prefWidth="243.0" />
+            <TextField fx:id="emailField" layoutX="83.0" layoutY="110.0" prefHeight="25.0" prefWidth="243.0" />
+            <Label layoutX="14.0" layoutY="29.0" text="First Name" textFill="#fbf5f5" />
+            <Label layoutX="15.0" layoutY="73.0" text="Last Name" textFill="#f4f0f0" />
+            <Label layoutX="15.0" layoutY="114.0" text="Email" textFill="#fbeded" />
+            <Button layoutX="254.0" layoutY="154.0" mnemonicParsing="false" onAction="#update" style="-fx-background-color: #f79256;" text="Update" />
+            <Button layoutX="235.0" layoutY="195.0" mnemonicParsing="false" onAction="#resetAccount" style="-fx-background-color: #D10000;" text="Reset Account" textFill="WHITE" />
+            <Button layoutX="83.0" layoutY="195.0" mnemonicParsing="false" onAction="#deleteAccount" style="-fx-background-color: #D10000;" text="Delete Account" textFill="#fffbfb" />
+         </children>
+      </Pane>
+      <Button layoutX="442.0" layoutY="76.0" mnemonicParsing="false" onAction="#choosePhoto" text="Choose Photo" />
+      <Label fx:id="idUserLabel" layoutX="223.0" layoutY="109.0" text="Label" textFill="WHITE" />
+   </children>
+</AnchorPane>

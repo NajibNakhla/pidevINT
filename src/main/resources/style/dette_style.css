@@ -1,0 +1,219 @@
+/* styles.css */
+
+/* General Styles */
+.root {
+    -fx-background-color: #f3f3f3;
+}
+
+/* Styles for TableView */
+.table-view {
+    -fx-background-color: #FFFFFF; /* Use a white background color */
+}
+
+/* Styles for TableColumn */
+.table-view .table-column {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #333333;
+}
+
+/* Styles for TableView cells */
+.table-cell {
+    -fx-alignment: CENTER; /* Center-align cell contents */
+    -fx-padding: 10px; /* Add more padding to the cells */
+    -fx-background-color: #FFFFFF; /* Use a white background color for cells */
+    -fx-border-color: #CCCCCC; /* Add a border to the cells */
+    -fx-border-width: 1px; /* Set the border width */
+}
+
+/* Styles for TableView rows */
+.table-row-cell {
+    -fx-background-color: #FFFFFF; /* Use a white background color for rows */
+    -fx-border-color: #CCCCCC; /* Add a border to the rows */
+    -fx-border-width: 1px; /* Set the border width */
+}
+
+/* Styles for TableView headers */
+.table-header-row {
+    -fx-background-color: #CCCCCC; /* Use a light gray background color for headers */
+    -fx-text-fill: #333333; /* Use a dark gray text color for headers */
+    -fx-font-weight: bold; /* Make the headers bold */
+    -fx-padding: 10px; /* Add padding to the headers */
+    -fx-border-color: #333333; /* Add a border to the headers */
+    -fx-border-width: 1px; /* Set the border width */
+    -fx-border-style: solid; /* Set the border style */
+}
+
+/* Styles for TableView selection */
+.table-row-cell:selected {
+    -fx-background-color: #38A3A5; /* Use a light blue background color for selected rows */
+    -fx-text-fill: #FFFFFF; /* Use a white text color for selected rows */
+    -fx-border-color: transparent; /* Remove the border color for selected rows */
+}
+
+/* Remove grid lines between rows and columns */
+.table-row-cell, .table-column {
+    -fx-border-width: 0px;
+}
+
+/* Styles for TableColumn headers */
+.column-header {
+    -fx-background-color: #CCCCCC; /* Use a light gray background color for column headers */
+    -fx-text-fill: #333333; /* Use a dark gray text color for column headers */
+    -fx-font-weight: bold; /* Make the column headers bold */
+}
+
+/* Hover Styles for TableView headers */
+.table-header-row:hover {
+    -fx-background-color: #AAAAAA; /* Use a slightly darker background color on hover */
+}
+
+/* Add separation between rows */
+.table-row-cell {
+    -fx-border-color: transparent transparent #CCCCCC transparent; /* Add a border to the bottom of the rows */
+    -fx-border-width: 0px 0px 1px 0px; /* Set the border width */
+}
+
+/* Color the first column of a selected row */
+.table-row-cell:selected .table-cell:filled {
+    -fx-background-color: #38A3A5; /* Use a light blue background color for the first column of a selected row */
+    -fx-text-fill: #FFFFFF; /* Use a white text color for the first column of a selected row */
+}
+
+/* Hover effect for TableView rows */
+.table-row-cell:hover {
+    -fx-background-color: #333333; /* Use a light blue background color for the first column of a selected row */
+    -fx-text-fill: #FFFFFF; /* Use a white text color for the first column of a selected row */
+}
+
+
+
+/* Styles for Button #22577A */
+.button {
+    -fx-background-color: #59a5d4;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-padding: 10px 20px;
+    -fx-background-radius: 5px;
+    -fx-border-radius: 5px;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Hover Styles for Button */
+.button:hover {
+    -fx-background-color: #38A3A5;
+    -fx-border-width: 0;
+}
+
+/* Selected Styles for Button */
+.button.button-selected {
+    -fx-background-color: #38A3A5;
+    -fx-text-fill: #FFFFFF;
+}
+
+/* Hover Styles for Selected Button */
+.button.button-selected:hover {
+    -fx-background-color: #22577A;
+    -fx-border-width: 0;
+}
+
+/* Styles for InfoBox */
+#infoBox {
+    -fx-spacing: 20;
+    -fx-padding: 20;
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 10;
+}
+
+/* Styles for TextLabel */
+.textLabel {
+    -fx-font-size: 14px;
+    -fx-fill: #333333;
+}
+
+/* Styles for TextValue */
+.textValue {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+/* Styles for ListView */
+.list-view {
+    -fx-background-color: #FFFFFF; /* Use a white background color */
+}
+
+/* Styles for ListCell */
+.list-cell {
+    -fx-background-color: #FFFFFF; /* Use a white background color */
+    -fx-text-fill: #333333; /* Use a dark gray text color */
+    -fx-padding: 10px; /* Add some padding to the cells */
+    -fx-background-radius: 5px; /* Add a border radius */
+    -fx-border-color: #CCCCCC; /* Add a border color */
+    -fx-border-width: 1px; /* Add a border width */
+}
+
+/* Hover Styles for ListCell */
+.list-cell:hover {
+    -fx-background-color: #f0f0f0; /* Use a slightly lighter background color on hover */
+}
+
+/* Selected Styles for ListCell */
+.list-cell:selected {
+    -fx-background-color: #38A3A5; /* Use a light blue background color for selected cells */
+    -fx-text-fill: #FFFFFF; /* Use a white text color for selected cells */
+}
+
+/* Styles for ListView ScrollBar */
+.scroll-bar {
+    -fx-background-color: #f3f3f3; /* Use a slightly darker background color */
+}
+
+/* Styles for ListView ScrollBar Thumb */
+.scroll-bar .thumb {
+    -fx-background-color: #38A3A5; /* Use a light blue color for the thumb */
+}
+
+/* Styles for ListView ScrollBar Track */
+.scroll-bar .track {
+    -fx-background-color: #FFFFFF; /* Use a white background color for the track */
+}
+
+/* Styles for TabPane */
+.tab-pane {
+    -fx-background-color: #FFFFFF; /* Use a white background color */
+}
+
+/* Styles for Tab */
+.tab {
+    -fx-background-color: transparent; /* Remove the background color */
+    -fx-text-fill: #333333; /* Use a dark gray text color */
+    -fx-font-weight: bold; /* Make the tab text bold */
+    -fx-padding: 10px; /* Add padding to the tabs */
+    -fx-border-color: #CCCCCC; /* Add a border color */
+    -fx-border-width: 1px; /* Add a border width */
+    -fx-border-radius: 5px; /* Add a border radius */
+}
+
+/* Hover Styles for Tab */
+.tab:hover {
+    -fx-background-color: #AAAAAA; /* Use a slightly darker background color on hover */
+}
+
+/* Selected Styles for Tab */
+.tab:selected {
+    -fx-background-color: #22577A; /* Use a light blue background color for selected tabs */
+    -fx-text-fill: #FFFFFF; /* Use a white text color for selected tabs */
+    -fx-border-color: #333333; /* Add a border color */
+    -fx-border-width: 1px; /* Add a border width */
+    -fx-border-radius: 5px; /* Add a border radius */
+}
+
+/* Styles for TabPane content area */
+.tab-pane .tab-content-area {
+    -fx-background-color: #333333; /* Use a white background color */
+    -fx-border-color: #CCCCCC; /* Add a border color */
+    -fx-border-width: 1px; /* Add a border width */
+    -fx-border-radius: 5px; /* Add a border radius */
+    -fx-padding: 10px; /* Add padding to the content area */
+    -fx-visibility: hidden; /* Hide the content area */
+}
+

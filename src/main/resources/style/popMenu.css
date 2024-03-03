@@ -1,0 +1,19 @@
+#popTransactionMenu {
+    -fx-background-color: #22577A; /* Set the background color */
+    -fx-background-radius: 20;
+
+}
+
+.button {
+    -fx-background-color: transparent; /* Make button background transparent */
+    -fx-text-fill: white; /* Set text color */
+    -fx-font-size: 14px; /* Set font size */
+}
+
+.button:hover {
+    -fx-background-color: #38A3A5; /* Set button background color on hover */
+}
+
+#lineV1, #lineV2 {
+    -fx-stroke: #ECF0F1; /* Set line color */
+}

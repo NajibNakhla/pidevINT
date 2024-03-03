@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #ffffff;" stylesheets="@../style/dashboard_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controles.Form5">
+    <children>
+        <Pane layoutX="35.0" layoutY="179.0" prefHeight="227.0" prefWidth="530.0" styleClass="pane-test">
+            <children>
+                <Label layoutX="171.0" layoutY="34.0" text="Do you pay rent ?" textFill="WHITE">
+                    <font>
+                        <Font size="24.0" />
+                    </font>
+                </Label>
+            <Button layoutX="422.0" layoutY="178.0" mnemonicParsing="false" onAction="#next5" prefHeight="25.0" prefWidth="71.0" style="-fx-background-color: #f79256;" text="Next" textFill="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <ChoiceBox fx:id="rent" layoutX="190.0" layoutY="100.0" prefWidth="150.0" />
+                <ImageView fitHeight="35.0" fitWidth="28.0" layoutX="145.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../icons/house.png" />
+                    </image>
+                </ImageView>
+            </children>
+        </Pane>
+      <Label fx:id="idUserLabel" disable="true" layoutX="103.0" layoutY="70.0" text="Label" textFill="WHITE" />
+      <Label fx:id="welcomeLabel" layoutX="289.0" layoutY="137.0" text="Label" textFill="#22577a">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="134.0" fitWidth="129.0" layoutX="246.0" layoutY="-6.0">
+         <image>
+            <Image url="@../icons/Design sans titre.png" />
+         </image>
+      </ImageView>
+    </children>
+</AnchorPane>

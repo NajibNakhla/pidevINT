@@ -1,0 +1,45 @@
+#incomeDialog {
+    -fx-background-color: white; /* Set background color */
+}
+
+.title-label {
+    -fx-font-size: 18pt; /* Set title font size */
+    -fx-font-weight: bold; /* Make title bold */
+}
+
+.label {
+    -fx-font-size: 13pt; /* Set label font size */
+    -fx-text-fill: #22577A; /* White text color */
+
+}
+
+TextField, ComboBox {
+    -fx-background-color: white;
+    -fx-border-color: #bfbfbf; /* Light gray border color */
+}
+
+.button {
+    -fx-pref-height: 30.0; /* Set button height */
+    -fx-pref-width: 120.0; /* Set button width */
+}
+
+#descriptionField {
+    -fx-pref-height: 55.0; /* Set preferred height for description field */
+
+    -fx-font-size: 18.0; /* Set font size for description field */
+}
+
+Button {
+    -fx-background-color: #22577A; /* Green background color */
+    -fx-text-fill: white; /* White text color */
+}
+Button {
+    -fx-background-color: #22577A; /* Green background color */
+    -fx-text-fill: white; /* White text color */
+}
+
+
+Button:hover {
+    -fx-background-color: #38A3A5; /* Set the desired color when hovered */
+    -fx-text-fill: white; /* Set the text color when hovered */
+}

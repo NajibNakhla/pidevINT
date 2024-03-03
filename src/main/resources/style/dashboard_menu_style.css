@@ -1,0 +1,25 @@
+#mainVBox .button {
+    -fx-background-color: #22577A;
+    -fx-text-fill: white;
+    -fx-border-width: 0;
+}
+
+#mainVBox .button:hover {
+    -fx-border-color: white; /* Add a white border on hover */
+    -fx-border-width: 2px; /* Set border width on hover */
+}
+
+
+
+#mainVBox .button.button-selected {
+    -fx-background-color: #38A3A5 !important; /* Change background color for selected state */
+    -fx-text-fill: white;
+}
+
+
+#mainVBox .button-selected:hover {
+    -fx-background-color: #22577A;
+    -fx-text-fill: white;
+    -fx-border-width: 2px;
+    -fx-border-color: white;
+}

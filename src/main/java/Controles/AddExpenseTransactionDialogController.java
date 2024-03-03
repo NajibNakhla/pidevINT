@@ -1,0 +1,153 @@
+package Controles;
+
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import Entities.Transaction;
+import enums.TransactionType;
+import Services.AccountService;
+import Services.PayeeService;
+import Services.TransactionService;
+
+import java.time.LocalDate;
+import java.util.List;
+
+public class AddExpenseTransactionDialogController {
+    private int accountId;
+
+    public void setAccountId(int accountId) {
+        this.accountId = accountId;
+    }
+
+    @FXML
+    private TextField amountField;
+
+    @FXML
+    private ComboBox<String> categoryComboBox;
+
+    @FXML
+    private TextField descriptionField;
+
+    @FXML
+    private ComboBox<String> payeeComboBox;
+    private Stage dialogStage;  // The stage of the dialog
+    private boolean okClicked = false;  // Indicates whether the OK button was clicked
+
+
+    @FXML
+    private void initialize() {
+        PayeeService payeeService = new PayeeService();
+        AccountService accountService = new AccountService();
+        List<String> payeeNames = payeeService.getPayeeNames();
+        List<String> categoryNames = accountService.getCategoryNames();
+
+        payeeComboBox.getItems().addAll(payeeNames);
+        categoryComboBox.getItems().addAll(categoryNames);
+
+
+
+
+
+
+    }
+
+    @FXML
+    void addExpenseTransaction(ActionEvent event) {
+
+        if (isValidInput()) {
+
+            TransactionService transactionService = new TransactionService();
+            PayeeService payeeService = new PayeeService();
+            AccountService accountService = new AccountService();
+            String description = descriptionField.getText();
+            double amount = Double.parseDouble(amountField.getText());
+            String selectedPayee = payeeComboBox.getValue();
+            String selectedCategory = categoryComboBox.getValue();
+            int idPayee = payeeService.getPayeeIdByName(selectedPayee);
+            int idCategory = accountService.getCategoryIdByName(selectedCategory);
+            System.out.println(this.accountId);
+            Transaction transaction = new Transaction(LocalDate.now(), TransactionType.EXPENSE, description, amount, this.accountId, this.accountId,idCategory , idPayee);
+            transactionService.addTransactionService(transaction);
+
+            //   double balance = accountService.getCurrentBalance(this.accountId);
+
+
+
+            closeDialog();
+
+
+
+        }
+    }
+
+    @FXML
+    void cancelAction(ActionEvent event) {
+        closeDialog();
+    }
+
+
+
+    private void closeDialog() {
+        // Get the current stage
+        Stage stage = (Stage) descriptionField.getScene().getWindow();
+
+        // Close the stage
+        stage.close();
+    }
+    public String getPayee() {
+        return payeeComboBox.getValue();
+    }
+
+    public String getDescription() {
+        return descriptionField.getText();
+    }
+
+    public double getAmount() {
+        // Add validation logic to ensure it's a valid double before parsing
+        return Double.parseDouble(amountField.getText());
+    }
+
+    private void showAlert(String content) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setContentText(content);
+        alert.showAndWait();
+    }
+    private boolean isValidInput() {
+        // Retrieve input values from the user interface (e.g., text fields, combo boxes)
+        String description = descriptionField.getText();
+        String amountText = amountField.getText();
+
+        // Validate if the description is not empty
+        if (description.isEmpty()) {
+            showAlert("Please enter a description.");
+            return false;
+        }
+
+        // Validate if the amount is a valid number
+        try {
+            double amount = Double.parseDouble(amountText);
+            if (amount <= 0) {
+                showAlert("Please enter a valid positive amount.");
+                return false;
+            }
+        } catch (NumberFormatException e) {
+            showAlert("Please enter a valid numeric amount.");
+            return false;
+        }
+
+        if (categoryComboBox.getSelectionModel().isEmpty()) {
+            showAlert("Please select a category.");
+            return false;
+        }
+        if (payeeComboBox.getSelectionModel().isEmpty()) {
+            showAlert("Please select a payee.");
+            return false;
+        }
+        return true;
+    }
+
+
+}

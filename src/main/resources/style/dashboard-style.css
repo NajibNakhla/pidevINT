@@ -1,0 +1,56 @@
+#mainVBox .button {
+    -fx-background-color: #22577A;
+    -fx-text-fill: white;
+    -fx-border-width: 0;
+}
+
+#mainVBox .button:hover {
+    -fx-border-color: white; /* Add a white border on hover */
+    -fx-border-width: 2px; /* Set border width on hover */
+}
+
+
+
+#mainVBox .button.button-selected {
+    -fx-background-color: #38A3A5 !important; /* Change background color for selected state */
+    -fx-text-fill: white;
+}
+
+
+#mainVBox .button-selected:hover {
+    -fx-background-color: #22577A;
+    -fx-text-fill: white;
+    -fx-border-width: 2px;
+    -fx-border-color: white;
+}
+
+#infoBox {
+    -fx-spacing: 20; /* Adjust the spacing between elements */
+    -fx-padding: 20; /* Add padding to the HBox */
+    -fx-background-color: #FFFFFF; /* Set background color for the HBox */
+    -fx-background-radius: 10; /* Set the radius for rounded corners */
+}
+
+
+.textLabel, #nbrAccountsText, #TotalBalanceText, #nbrTransactionText {
+    -fx-font-size: 14; /* Set font size for the labels */
+    -fx-fill: #333333; /* Set text color for the labels (black) */
+}
+
+.textValue, #nbrAccounts, #totalBalance, #nbrTransactions {
+    -fx-font-size: 24; /* Set font size for the values */
+    -fx-font-weight: bold;
+    /* Make the values bold */
+}
+
+#nbrAccounts {
+    -fx-fill: #38A3A5; /* Set text color for the Number of Accounts value (blue) */
+}
+
+#totalBalance {
+    -fx-fill: #57CC99; /* Set text color for the Total Balance value (green) */
+}
+
+#nbrTransactions {
+    -fx-fill: #E74C3C; /* Set text color for the Number of Transactions value (red) */
+}

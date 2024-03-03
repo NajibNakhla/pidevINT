@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="MenuDashboardContainer" prefHeight="625.0" prefWidth="899.0" stylesheets="@../style/dashboard_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controles.AfficherDebt">
+    <children>
+        <VBox fx:id="mainVBox" prefHeight="626.0" prefWidth="208.0" style="-fx-background-color: #22577A;">
+            <children>
+                <ImageView fx:id="pennywiseLOGO" fitHeight="135.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true" style="-fx-image:url('img.png');">
+                    <image>
+                        <Image url="@../images/img.png" />
+                    </image>
+                    <VBox.margin>
+                        <Insets left="30.0" />
+                    </VBox.margin>
+                </ImageView>
+                <Button fx:id="profile" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openProfile" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Profile" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('user_icon_white.png');">
+                        <image>
+                                <Image url="@../icons/user_icon_white.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="overview" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openOverview" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" styleClass="button button-selected" text="Overview" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('home.png');">
+                            <image>
+                                <Image url="@../icons/home.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="budget" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openBudget" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Budget" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('cash-flow.png');">
+                            <image>
+                                <Image url="@../icons/cash-flow.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="reports" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openReports" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Reports" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('bar-chart.png');">
+                            <image>
+                                <Image url="@../icons/bar-chart.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="accounts" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openAccounts" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Accounts" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('credit-card.png');">
+                            <image>
+                                <Image url="@../icons/credit-card.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="debts" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openDebts" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Debts" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('liability.png');">
+                            <image>
+                                <Image url="@../icons/liability.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="wishlist" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openWishlist" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="WishList" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('christmas-star.png');">
+                            <image>
+                                <Image url="@../icons/christmas-star.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="todo" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openTodo" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="TODO" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('to-do-list.png');">
+                            <image>
+                                <Image url="@../icons/to-do-list.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="settings" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openSettings" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Settings" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('settings.png');">
+                            <image>
+                                <Image url="@../icons/settings.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+                <Button fx:id="signout" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" onAction="#openSignOut" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Sign Out" textFill="WHITE">
+                    <graphic>
+                        <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: url('logout.png');">
+                            <image>
+                                <Image url="@../icons/logout.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                    <padding>
+                        <Insets left="50.0" />
+                    </padding>
+                </Button>
+            </children>
+        </VBox>
+        <TabPane layoutX="205.0" layoutY="-1.0" prefHeight="626.0" prefWidth="694.0" stylesheets="@../style/dette_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+            <tabs>
+                <Tab text="DETTES">
+                    <content>
+                        <AnchorPane prefHeight="457.0" prefWidth="701.0" style="-fx-background-color: #22577A;" stylesheets="@../style/dette_style.css">
+                            <children>
+                                <Label layoutX="23.0" layoutY="33.0" prefHeight="30.0" prefWidth="191.0" text="LIST DES DETTES :" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <TableView fx:id="TableDebt" layoutX="23.0" layoutY="79.0" prefHeight="286.0" prefWidth="618.0" stylesheets="@../style/dette_style.css">
+                                    <columns>
+                                        <TableColumn fx:id="ColID" prefWidth="38.39999580383301" text="ID" />
+                                        <TableColumn fx:id="ColMontant" prefWidth="80.79998016357422" text="Montant" />
+                                        <TableColumn fx:id="ColDatePaiement" prefWidth="105.5999755859375" text="Date Paiement" />
+                                        <TableColumn fx:id="ColMontantRestant" prefWidth="104.0" text="Montant Restant" />
+                                        <TableColumn fx:id="ColTauxInteret" prefWidth="88.79998779296875" text="Taux d'interet" />
+                                        <TableColumn fx:id="ColType" prefWidth="85.60000610351562" text="Type" />
+                                        <TableColumn fx:id="ColDateCreation" prefWidth="123.20001220703125" text="Date Creation" />
+                                    </columns>
+                                </TableView>
+                                <Button layoutX="62.0" layoutY="393.0" mnemonicParsing="false" onAction="#openAjouterDebt" style="-fx-background-color: #59a5d4;" text="Ajouter" />
+                                <Button layoutX="523.0" layoutY="393.0" mnemonicParsing="false" onAction="#supprimerDebt" text="Supprimer" />
+                                <Button layoutX="285.0" layoutY="393.0" mnemonicParsing="false" onAction="#openModifierDebt" style="-fx-background-color: #59a5d4;" text="Modifier" />
+                                <ImageView fitHeight="117.0" fitWidth="139.0" layoutX="548.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/img.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="27.0" fitWidth="32.0" layoutX="487.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/trash.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="27.0" fitWidth="27.0" layoutX="247.0" layoutY="401.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/6367.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="29.0" fitWidth="19.0" layoutX="33.0" layoutY="405.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/blue-plus-icon-2.jpg" />
+                                    </image>
+                                </ImageView>
+                                <Button fx:id="SMS" layoutX="458.0" layoutY="14.0" mnemonicParsing="false" onAction="#sendSMS" text="SMS" />
+                                <TextField fx:id="PhoneNumberText" layoutX="294.0" layoutY="23.0" />
+                                <Button fx:id="Excel" layoutX="205.0" layoutY="14.0" mnemonicParsing="false" onAction="#generateExcel" text="Excel" />
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="CATEGORIES DETTES">
+                    <content>
+                        <AnchorPane prefHeight="457.0" prefWidth="701.0" style="-fx-background-color: #22577A;" stylesheets="@../style/dette_style.css">
+                            <children>
+                                <Label layoutX="22.0" layoutY="48.0" prefHeight="30.0" prefWidth="338.0" text="LIST DE CATEGORIES DES DETTES :" textFill="WHITE">
+                                    <font>
+                                        <Font name="System Bold" size="20.0" />
+                                    </font>
+                                </Label>
+                                <Button layoutX="104.0" layoutY="390.0" mnemonicParsing="false" onAction="#openAjouterCatDebt" text="Ajouter" />
+                                <Button layoutX="506.0" layoutY="390.0" mnemonicParsing="false" onAction="#supprimerCatDebt" text="Supprimer" />
+                                <Button layoutX="293.0" layoutY="389.0" mnemonicParsing="false" onAction="#openModifierCatDebt" style="-fx-background-color: #59a5d4;" stylesheets="@../style/dette_style.css" text="Modifier" />
+                                <ListView fx:id="list" layoutX="121.0" layoutY="120.0" prefHeight="200.0" prefWidth="438.0" stylesheets="@../style/dette_style.css" />
+                                <ImageView fitHeight="95.0" fitWidth="146.0" layoutX="545.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../images/img.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="38.0" fitWidth="39.0" layoutX="60.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/blue-plus-icon-2.jpg" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="38.0" fitWidth="42.0" layoutX="241.0" layoutY="392.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/6367.png" />
+                                    </image>
+                                </ImageView>
+                                <ImageView fitHeight="40.0" fitWidth="43.0" layoutX="452.0" layoutY="390.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../icons/trash.png" />
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+    </children>
+</AnchorPane>

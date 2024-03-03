@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="626.0" prefWidth="824.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controles.AjouterCategory">
+    <AnchorPane fx:id="MenuDashboardAnchor" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <VBox fx:id="mainVBox" prefHeight="626.0" prefWidth="208.0" style="-fx-background-color: #22577A;">
+                <children>
+                    <ImageView fx:id="pennywiseLOGO" fitHeight="135.0" fitWidth="123.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../images/img.png" />
+                        </image>
+                        <VBox.margin>
+                            <Insets left="30.0" />
+                        </VBox.margin>
+                    </ImageView>
+                    <Button fx:id="profile" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Profile" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/user_icon_white.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                    <Button fx:id="overview" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" styleClass="button button-selected" text="Overview" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/home.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                    <Button fx:id="budget" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Budget" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/cash-flow.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                    <Button fx:id="reports" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Reports" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/bar-chart.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                    <Button fx:id="accounts" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Accounts" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/credit-card.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                    <Button fx:id="debts" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Debts" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/liability.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                    <Button fx:id="wishlist" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="WishList" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/christmas-star.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                    <Button fx:id="todo" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="TODO" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">
+                                <image>
+                                    <Image url="@../icons/to-do-list.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                    <Button fx:id="settings" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Settings" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/settings.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                    <Button fx:id="signout" alignment="BASELINE_LEFT" graphicTextGap="22.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="206.0" style="-fx-background-color: #22577A;" text="Sign Out" textFill="WHITE">
+                        <graphic>
+                            <ImageView fitHeight="26.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                <image>
+                                    <Image url="@../icons/logout.png" />
+                                </image>
+                            </ImageView>
+                        </graphic>
+                        <padding>
+                            <Insets left="50.0" />
+                        </padding>
+                    </Button>
+                </children>
+            </VBox>
+        </children>
+    </AnchorPane>
+    <VBox alignment="CENTER" layoutX="219.0" layoutY="64.0" prefHeight="409.0" prefWidth="591.0" spacing="20">
+        <HBox alignment="CENTER" spacing="10">
+            <!-- Categories title label -->
+            <Label style="-fx-font-size: 20pt; -fx-font-weight: bold; -fx-text-fill: #243B55;" text="Categories" />
+            <!-- Empty space to push the button to the right -->
+            <HBox styleClass="spacer" HBox.hgrow="ALWAYS" />
+            <!-- "Add Category" button aligned to the right -->
+            <Button onAction="#openAddCategoryPopup" prefHeight="38.0" prefWidth="112.0" style="-fx-background-color: linear-gradient(to right top, #141E30 , #243B55); -fx-text-fill: white; -fx-background-radius: 1em;" styleClass="button" text="Add Category" />
+        </HBox>
+        <!-- List view for categories -->
+        <ListView fx:id="categoryListView" prefHeight="335.0" prefWidth="591.0" />
+    </VBox>
+   <ImageView fitHeight="68.0" fitWidth="68.0" layoutX="250.0" layoutY="9.0" onMouseClicked="#openStatPopup" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../images/icon_stat.png" />
+      </image>
+   </ImageView>
+</AnchorPane>
