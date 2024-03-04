@@ -6,11 +6,12 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
+<?import javafx.scene.control.TextArea?>
 <AnchorPane id="addAccountDialog" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="445.0" prefWidth="461.0" stylesheets="@../style/formsTransactions.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controles.AddAccountDIalog">
     <children>
         <Label layoutX="171.0" layoutY="24.0" prefWidth="120.0" styleClass="title-label" text="Add Account" />
-        <Label layoutX="25.0" layoutY="298.0" text="Description:" />
-        <TextField fx:id="descriptionField" layoutX="133.0" layoutY="298.0" prefHeight="103.0" prefWidth="248.0" promptText="Description" />
+        <Label layoutX="25.0" layoutY="298.0" text="Description:"  />
+        <TextArea fx:id="descriptionField" layoutX="133.0" layoutY="298.0" prefHeight="103.0" prefWidth="248.0" promptText="Description" wrapText="true"  />
         <Label layoutX="25.0" layoutY="225.0" text="Balance" />
         <TextField fx:id="balanceField" layoutX="133.0" layoutY="223.0" prefHeight="27.0" prefWidth="200.0" />
         <Label layoutX="25.0" layoutY="148.0" text="Type" />

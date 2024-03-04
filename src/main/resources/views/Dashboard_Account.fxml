@@ -154,38 +154,15 @@
       </AnchorPane>
       <AnchorPane fx:id="accInterface" layoutX="209.0" layoutY="-1.0" prefHeight="626.0" prefWidth="814.0">
          <children>
-            <VBox layoutX="14.0" layoutY="26.0" prefHeight="30.0" prefWidth="123.0">
-               <children>
-                  <MenuButton fx:id="MenuOfAccounts" mnemonicParsing="false" prefHeight="53.0" prefWidth="98.0" stylesheets="@../style/dashboard_style.css" text="Account" textFill="WHITE">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Action 1" />
-                      <MenuItem mnemonicParsing="false" text="Action 2" />
-                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
-                    </items>
-                  </MenuButton>
-                  <HBox>
-                     <children>
-                        <ImageView fx:id="iconOfAccount" fitHeight="23.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../icons/banknote_green.png" />
-                           </image>
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </ImageView>
-                        <Text fx:id="typeOfAccount" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" wrappingWidth="62.46115303039551">
-                           <HBox.margin>
-                              <Insets right="10.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
-                     <VBox.margin>
-                        <Insets top="5.0" />
-                     </VBox.margin>
-                  </HBox>
-               </children>
-            </VBox>
-            <Text fx:id="balanceOfAccount" layoutX="339.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" />
+            <MenuButton fx:id="MenuOfAccounts" layoutX="14.0" layoutY="26.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="100.0" stylesheets="@../style/dashboard_style.css" text="Account" textFill="WHITE">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Action 1" />
+                <MenuItem mnemonicParsing="false" text="Action 2" />
+                  <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+              </items>
+            </MenuButton>
+            <HBox layoutX="14.0" layoutY="57.20000076293945" />
+            <Text fx:id="balanceOfAccount" layoutX="387.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0" x="30.0" />
             <ImageView fx:id="penEdit" fitHeight="26.0" fitWidth="28.0" layoutX="650.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../icons/pen_final.png" />
@@ -231,6 +208,12 @@
             </AnchorPane>
             <Line fx:id="firstLine1" endX="711.800048828125" endY="-7.62939453125E-6" layoutX="105.0" layoutY="150.0" startX="-100.0" />
             <Line fx:id="firstLine" endX="711.800048828125" endY="-7.62939453125E-6" layoutX="103.0" layoutY="107.0" startX="-100.0" />
+            <Text fx:id="typeOfAccount" layoutX="150.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type" wrappingWidth="89.60000000000014" x="50.0" />
+            <ImageView fx:id="iconOfAccount" fitHeight="37.0" fitWidth="42.0" layoutX="150.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" x="50.0">
+               <image>
+                  <Image url="@../icons/banknote_green.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
 

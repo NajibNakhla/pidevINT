@@ -26,7 +26,7 @@ TextField, ComboBox {
 #descriptionField {
     -fx-pref-height: 55.0; /* Set preferred height for description field */
 
-    -fx-font-size: 18.0; /* Set font size for description field */
+    -fx-font-size: 13; /* Set font size for description field */
 }
 
 Button {

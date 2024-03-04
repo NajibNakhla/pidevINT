@@ -577,6 +577,7 @@ public class Dashboard_Accounts {
 
             // Set the account id
             controller.setAccountId(idAccount);
+            controller.updateComboBoxItems();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Add Expense Transaction");

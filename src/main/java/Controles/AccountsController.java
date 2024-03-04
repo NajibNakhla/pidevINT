@@ -159,6 +159,7 @@ public class AccountsController {
 
             // Initialize the controller with account details
             controller.initialize(idAccount,name, type, balance, description);
+            controller.setAccountsController(this);
 
             // Add the accountPane to the FlowPane
             accountsContainer.getChildren().add(accountPane);
@@ -264,5 +265,18 @@ public class AccountsController {
     }
 
     public void managePayees(ActionEvent actionEvent) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/ManagePayees.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
+            // Get the controller of the second window
+            ManagePayees managePayees = loader.getController();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

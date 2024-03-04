@@ -81,10 +81,10 @@ public class AccountPaneController {
             // Retrieve the controller
             AccountPopMenu popMenuController = loader.getController();
            // popMenuController.setAccountsController(this);
-            FXMLLoader loader2 = new FXMLLoader(getClass().getResource("/views/AllAccounts.fxml"));
-            accountsController = loader2.getController();
+
+
             // Pass the reference to AccountsController
-            popMenuController.setAccountsController(accountsController);
+            popMenuController.setAccountsController(this.accountsController);
 
             // Set any necessary data in the pop-up controller
             popMenuController.setAccountId(idAccount);

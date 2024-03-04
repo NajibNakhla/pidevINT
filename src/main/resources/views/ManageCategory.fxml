@@ -12,12 +12,12 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="495.0" styleClass="section-wish" stylesheets="@../style/dashboard_style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controles.ManageCategory">
     <children>
-            <Label layoutX="137.0" layoutY="24.0" styleClass="manageWishlistTitle" text="Manage Categories" textFill="WHITE" />
+            <Label layoutX="137.0" layoutY="24.0" styleClass="manageWishlistTitle" text="Manage Payees" textFill="WHITE" />
       <VBox layoutX="84.0" layoutY="69.0" prefHeight="262.0" prefWidth="326.0" styleClass="custom-hbox">
          <children>
             <AnchorPane prefHeight="270.0" prefWidth="326.0">
                <children>
-                  <TextField fx:id="categoryName" layoutX="50.0" layoutY="221.0" promptText="Category name" styleClass="text-field-cat"/>
+                  <TextField fx:id="PayeeName" layoutX="50.0" layoutY="221.0" promptText="Category name" styleClass="text-field-cat" />
                     <Button layoutX="238.0" layoutY="72.0" mnemonicParsing="false" onAction="#addCategoryButton" prefHeight="35.0" prefWidth="48.0" styleClass="add-button">
                         <graphic>
                             <ImageView fitHeight="20.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true" style="-fx-image: #22577A;">

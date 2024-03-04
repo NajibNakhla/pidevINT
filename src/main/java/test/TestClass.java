@@ -131,7 +131,9 @@ public class TestClass {
 
       //  ws.updateWalletCurrencyAndBalance(1,"TND",currencyService);
       //  System.out.println(ws.getCurrency(1));
-        System.out.println(ts.getAllTransactions());
+       // System.out.println(ts.getAllTransactions());
+
+        System.out.println(as.getAccountNameById(42));
 
 
 

@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -20,7 +21,7 @@ import java.util.List;
 public class AddTransferTransactionDialogController {
 
 
-    public TextField descriptionField;
+    public TextArea descriptionField;
     public TextField amountField;
     public AnchorPane incomeDialog;
     private int accountId;
@@ -37,16 +38,26 @@ public class AddTransferTransactionDialogController {
 
     @FXML
     private void initialize() {
+        setupComboBoxItems();
+
+    }
+    private void setupComboBoxItems() {
         PayeeService payeeService = new PayeeService();
-        AccountService accountService= new AccountService();
+        AccountService accountService = new AccountService();
+
         List<String> payeeNames = payeeService.getPayeeNames();
         List<String> accountNames = accountService.getAccountsNames();
 
-        // Initialize your payee names in the ComboBox
+        // Remove the account with the current accountId
+        accountNames.remove(accountService.getAccountNameById(this.accountId));
 
-        payeeComboBox.getItems().addAll(payeeNames);
-        toAccountComboBox.getItems().addAll(accountNames);
+        payeeComboBox.getItems().setAll(payeeNames);
+        toAccountComboBox.getItems().setAll(accountNames);
+    }
 
+    // This method can be called whenever you need to update the ComboBox items
+    public void updateComboBoxItems() {
+        setupComboBoxItems();
     }
 
     @FXML
@@ -67,6 +78,7 @@ public class AddTransferTransactionDialogController {
     }
 
     private boolean isValidInput() {
+
         // Retrieve input values from the user interface (e.g., text fields, combo boxes)
         String description = descriptionField.getText();
         String amountText = amountField.getText();

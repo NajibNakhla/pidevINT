@@ -125,6 +125,24 @@ public class PayeeService implements IPayee<Payee> {
     }
 
 
+    public boolean isPayeeNameUnique(String categoryName) {
+        String query = "SELECT COUNT(*) FROM payee WHERE namePayee = ?";
+        try {
+            PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(query);
+            pst.setString(1, categoryName);
+            try (ResultSet rs = pst.executeQuery()) {
+                if (rs.next()) {
+                    int count = rs.getInt(1);
+                    return count == 0; // If count is 0, the name is unique
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false; // Default to false if an exception occurs
+    }
+
+
 
 
 

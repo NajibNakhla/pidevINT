@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import Entities.Account;
@@ -18,7 +19,7 @@ public class AddAccountDIalog {
     private TextField balanceField;
 
     @FXML
-    private TextField descriptionField;
+    private TextArea descriptionField;
 
     @FXML
     private TextField nameAccField;
@@ -37,12 +38,20 @@ public class AddAccountDIalog {
     void addAccount(ActionEvent event) {
         if (isValidInput()) {
             AccountService accountService = new AccountService();
-            Account account = new Account(nameAccField.getText(), AccountType.valueOf(typeComboBox.getValue()),Double.valueOf(balanceField.getText()),descriptionField.getText(),1);
-            accountService.addEntity(account);
-            addClicked = true;
-            showSuccessAlert();
-            dialogClosedSuccessfully = true;
-            closeDialog();
+
+            if (accountService.isPayeeNameUnique(nameAccField.getText())) {
+
+                Account account = new Account(nameAccField.getText(), AccountType.valueOf(typeComboBox.getValue()), Double.valueOf(balanceField.getText()), descriptionField.getText(), 1);
+                accountService.addEntity(account);
+                addClicked = true;
+                showSuccessAlert();
+                dialogClosedSuccessfully = true;
+                closeDialog();
+            }else{
+                Alert errorAlert = new Alert(Alert.AlertType.ERROR);
+                errorAlert.setContentText("This account already exists!");
+                errorAlert.show();
+            }
         }
     }
 
@@ -63,6 +72,8 @@ public class AddAccountDIalog {
             showAlert("Please fill in all fields.");
             return false;
         }
+
+
 
         try {
             double balance = Double.parseDouble(balanceText);

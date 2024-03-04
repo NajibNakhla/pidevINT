@@ -483,5 +483,49 @@ public class AccountService implements IAccount<Account> {
     }
 
 
+    public boolean isPayeeNameUnique(String accountName) {
+        String query = "SELECT COUNT(*) FROM account WHERE nameAccount = ?";
+        try {
+            PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(query);
+            pst.setString(1, accountName);
+            try (ResultSet rs = pst.executeQuery()) {
+                if (rs.next()) {
+                    int count = rs.getInt(1);
+                    return count == 0; // If count is 0, the name is unique
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return false; // Default to false if an exception occurs
+    }
+
+
+    public String getAccountNameById(int accountId) {
+        String accountName = null;
+
+        // Example query (adjust based on your actual schema)
+        String query = "SELECT nameAccount FROM account WHERE idAccount = ?";
+
+        try {
+            PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(query);
+            pst.setInt(1, accountId);
+
+            try (ResultSet resultSet = pst.executeQuery()) {
+                if (resultSet.next()) {
+                    accountName = resultSet.getString("nameAccount");
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace(); // Handle the exception according to your needs
+        }
+
+        return accountName;
+    }
+
+    // ... (other methods)
 }
+
+
+
 
