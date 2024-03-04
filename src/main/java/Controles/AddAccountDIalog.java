@@ -24,6 +24,12 @@ public class AddAccountDIalog {
     @FXML
     private TextField nameAccField;
 
+    private int idWallet;
+
+    public void setIdWallet(int idWallet) {
+        this.idWallet = idWallet;
+    }
+
     @FXML
     private ComboBox<String> typeComboBox;
     private boolean addClicked = false;
@@ -41,7 +47,7 @@ public class AddAccountDIalog {
 
             if (accountService.isPayeeNameUnique(nameAccField.getText())) {
 
-                Account account = new Account(nameAccField.getText(), AccountType.valueOf(typeComboBox.getValue()), Double.valueOf(balanceField.getText()), descriptionField.getText(), 1);
+                Account account = new Account(nameAccField.getText(), AccountType.valueOf(typeComboBox.getValue()), Double.valueOf(balanceField.getText()), descriptionField.getText(), idWallet);
                 accountService.addEntity(account);
                 addClicked = true;
                 showSuccessAlert();

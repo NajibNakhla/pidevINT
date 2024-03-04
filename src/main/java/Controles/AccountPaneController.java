@@ -25,9 +25,12 @@ public class AccountPaneController {
 
     private WalletService walletService = new WalletService();
     private String currencySymbol="";
+    private int idWallet;
 
-
-    // Other methods and fields...
+    public void setIdWallet(int idWallet) {
+        this.idWallet = idWallet;
+    }
+// Other methods and fields...
 
     public void setAccountsController(AccountsController accountsController) {
         this.accountsController = accountsController;
@@ -52,7 +55,7 @@ public class AccountPaneController {
     private Label typeLabel;
 
     public void initialize(int idAccount, String name, String type, String balance, String description) {
-        updateCurrencySymbol(1);
+        updateCurrencySymbol(idWallet);
         nameLabel.setText(name);
         typeLabel.setText(type);
 
@@ -141,8 +144,8 @@ public class AccountPaneController {
         AccountService as =new AccountService();
         WalletService ws = new WalletService();
         TransactionService ts = new TransactionService();
-        int numberOfAccounts = as.countAccountsForWallet(1);
-        double totalBalance = ws.getTotalBalanceData(1);
+        int numberOfAccounts = as.countAccountsForWallet(idWallet);
+        double totalBalance = ws.getTotalBalanceData(idWallet);
         int numberOfTransactions = ts.countTransactions();
         accountsController.setData(numberOfAccounts,totalBalance,numberOfTransactions);
 

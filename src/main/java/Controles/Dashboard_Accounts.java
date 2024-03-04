@@ -40,6 +40,11 @@ import java.util.Optional;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class Dashboard_Accounts {
+    public void setIdWallet(int idWallet) {
+        this.idWallet = idWallet;
+    }
+
+    private int idWallet=2;
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
     private WalletService walletService = new WalletService();
     private String currencySymbol="";
@@ -275,7 +280,7 @@ public class Dashboard_Accounts {
     private void initializeAccounts() {
         transactionTable.getColumns().clear();
         AccountService accountService = new AccountService();
-        List<Account> accounts = accountService.getAllAccounts();
+        List<Account> accounts = accountService.getAllAccounts(idWallet);
 
 
         // Clear existing items (optional, depending on your use case)
@@ -680,6 +685,7 @@ public class Dashboard_Accounts {
 
     public void allAccountsPage(ActionEvent actionEvent) {
         try {
+            AccountService accountService =new AccountService();
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/views/AllAccounts.fxml"));
             Parent root = loader.load();
             Stage stage = (Stage) overview.getScene().getWindow(); // Access the current stage
@@ -687,7 +693,10 @@ public class Dashboard_Accounts {
 
             // Get the controller and manually call initialize
             AccountsController controller = loader.getController();
+            controller.setIdWallet(this.idWallet);
             controller.initialize();
+
+
         } catch (IOException e) {
             e.printStackTrace();
             // Handle the exception

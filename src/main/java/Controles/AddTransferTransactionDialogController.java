@@ -32,6 +32,8 @@ public class AddTransferTransactionDialogController {
 
 
 
+
+
     private Stage dialogStage;  // The stage of the dialog
 
     private boolean okClicked = false;  // Indicates whether the OK button was clicked
@@ -45,8 +47,10 @@ public class AddTransferTransactionDialogController {
         PayeeService payeeService = new PayeeService();
         AccountService accountService = new AccountService();
 
+        int idWallet = accountService.getWalletIdForAccount(accountId);
+
         List<String> payeeNames = payeeService.getPayeeNames();
-        List<String> accountNames = accountService.getAccountsNames();
+        List<String> accountNames = accountService.getAccountsNames(idWallet);
 
         // Remove the account with the current accountId
         accountNames.remove(accountService.getAccountNameById(this.accountId));

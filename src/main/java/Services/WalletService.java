@@ -34,12 +34,12 @@ public class WalletService implements IWallet<Wallet> {
         return totalBalance;
     }
 
-    public void updateTotalBalance(double newTotalBalance) {
+    public void updateTotalBalance(double newTotalBalance,int idWallet) {
         String updateQuery = "UPDATE wallet SET totalBalance = ? WHERE idWallet = ?";
 
         try (PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(updateQuery)) {
             pst.setDouble(1, newTotalBalance);
-            pst.setInt(2, 1);
+            pst.setInt(2, idWallet);
 
             int rowsUpdated = pst.executeUpdate();
             if (rowsUpdated > 0) {

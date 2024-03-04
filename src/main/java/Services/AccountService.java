@@ -18,10 +18,12 @@ import java.util.List;
 public class AccountService implements IAccount<Account> {
     private int walletDefaultID=1;
     // putting Wallet as the default one since were working on a main wallet with id =1 ;
+
+
     @Override
-    public void addEntity(Account account) {
+    public void addEntity(Account account  ) {
         String requete = "INSERT INTO account (nameAccount,typeAccount,balance,description,idWallet) VALUES (?,?,?,?,?)";
-        String updateWalletQuery = "UPDATE wallet SET totalBalance = totalBalance + ? WHERE idWallet = 1";
+        String updateWalletQuery = "UPDATE wallet SET totalBalance = totalBalance + ? WHERE idWallet = ?";
         try {
             PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(requete);
             PreparedStatement pst2 = MyConnection.getInstance().getCnx().prepareStatement(updateWalletQuery);
@@ -29,8 +31,10 @@ public class AccountService implements IAccount<Account> {
             pst.setString(2, String.valueOf(account.getTypeAccount()));
             pst.setString(3, String.valueOf(account.getBalance()));
             pst.setString(4, account.getDescription());
-            pst.setString(5, String.valueOf(walletDefaultID));
+            pst.setInt(5, account.getIdWallet());
             pst2.setDouble(1,account.getBalance());
+            pst2.setInt(2,account.getIdWallet());
+
             pst.executeUpdate();
             pst2.executeUpdate();
 
@@ -89,7 +93,7 @@ public class AccountService implements IAccount<Account> {
     }
 
     // Helper method to fetch the idWallet for an account
-    private int getWalletIdForAccount(int accountId) {
+    public int getWalletIdForAccount(int accountId) {
         String walletIdQuery = "SELECT idWallet FROM account WHERE idAccount = ?";
         try {
             PreparedStatement walletIdStatement = MyConnection.getInstance().getCnx().prepareStatement(walletIdQuery);
@@ -272,13 +276,15 @@ public class AccountService implements IAccount<Account> {
 
 
 
-    public List<Account> getAllAccounts() {
+    public List<Account> getAllAccounts(int idWal ) {
         List<Account> accounts = new ArrayList<>();
 
-        String query = "SELECT * FROM account";
+        String query = "SELECT * FROM account WHERE idWallet = ?";
 
-        try (PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(query);
-             ResultSet resultSet = pst.executeQuery()) {
+        try {
+            PreparedStatement pst = MyConnection.getInstance().getCnx().prepareStatement(query);
+            pst.setInt(1, idWal);
+             ResultSet resultSet = pst.executeQuery() ;
 
             while (resultSet.next()) {
                 int id = resultSet.getInt(1);
@@ -347,13 +353,14 @@ public class AccountService implements IAccount<Account> {
 
 
 
-    public List<String> getAccountsNames() {
+    public List<String> getAccountsNames(int wallet) {
         List<String> accountNames = new ArrayList<>();
-        String query = "SELECT nameAccount FROM account";
+        String query = "SELECT nameAccount FROM account WHERE idWallet = ?";
 
         try {
         Connection connection = MyConnection.getInstance().getCnx();
              PreparedStatement pst = connection.prepareStatement(query);
+            pst.setInt(1, wallet);
              ResultSet resultSet = pst.executeQuery() ;
 
             while (resultSet.next()) {
@@ -375,6 +382,7 @@ public class AccountService implements IAccount<Account> {
         String getOldBalanceQuery = "SELECT balance FROM account WHERE idAccount = ?";
         String updateAccountQuery = "UPDATE account SET nameAccount = ?, balance = ?, description = ? WHERE idAccount = ?";
         TransactionService ts = new TransactionService();
+        int idWallet = getWalletIdForAccount(accountId);
 
         try{
            Connection connection = MyConnection.getInstance().getCnx();
@@ -412,7 +420,7 @@ public class AccountService implements IAccount<Account> {
                 );
                 ts.addTransactionToDatabase(incomeTransaction);
                 WalletService walletService = new WalletService();
-                walletService.updateTotalBalanceAfterUpdate(incomeAmount, 1);
+                walletService.updateTotalBalanceAfterUpdate(incomeAmount, idWallet);
             } else if (newBalance < oldBalance) {
                 double expenseAmount = oldBalance - newBalance;
                 Transaction expenseTransaction = new Transaction(
@@ -427,7 +435,7 @@ public class AccountService implements IAccount<Account> {
                 );
                 ts.addTransactionToDatabase(expenseTransaction);
                 WalletService walletService = new WalletService();
-                walletService.updateTotalBalanceAfterUpdate(-expenseAmount, 1);
+                walletService.updateTotalBalanceAfterUpdate(-expenseAmount, idWallet);
             }
 
             System.out.println("Account updated successfully.");

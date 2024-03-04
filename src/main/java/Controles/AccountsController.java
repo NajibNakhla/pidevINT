@@ -27,6 +27,9 @@ public class AccountsController {
     public Button managePayeesButt;
     public Text allAccountsTitle;
     public Text accountsOverview;
+
+    private int accountId;
+    private int idWallet;
     private WalletService walletService = new WalletService();
     private String currencySymbol="";
     DecimalFormat decimalFormat = new DecimalFormat("#.##");
@@ -54,6 +57,10 @@ public class AccountsController {
 
     @FXML
     private Button budget;
+
+    public void setIdWallet(int idWallet) {
+        this.idWallet = idWallet;
+    }
 
     @FXML
     private Button debts;
@@ -110,6 +117,9 @@ public class AccountsController {
     private Button wishlist;
     public void initialize() {
         System.out.println("AccountsController initialized");
+        System.out.println(idWallet);
+        System.out.println(idWallet);
+        System.out.println(idWallet);
 
         loadAccounts();
 
@@ -117,8 +127,8 @@ public class AccountsController {
         AccountService as =new AccountService();
         WalletService ws = new WalletService();
         TransactionService ts = new TransactionService();
-        int numberOfAccounts = as.countAccountsForWallet(1);
-        double totalBalance = ws.getTotalBalanceData(1);
+        int numberOfAccounts = as.countAccountsForWallet(idWallet);
+        double totalBalance = ws.getTotalBalanceData(idWallet);
         int numberOfTransactions = ts.countTransactions();
 
 
@@ -130,8 +140,9 @@ public class AccountsController {
     }
     public void loadAccounts() {
         AccountService accountService = new AccountService();
+
         List<Account> accounts  ;
-        accounts = accountService.getAllAccounts();
+        accounts = accountService.getAllAccounts(idWallet);
         accountsContainer.getChildren().clear();
 
         for (Account account : accounts) {
@@ -156,6 +167,7 @@ public class AccountsController {
 
             // Get the controller associated with the loaded FXML
             AccountPaneController controller = loader.getController();
+            controller.setIdWallet(idWallet);
 
             // Initialize the controller with account details
             controller.initialize(idAccount,name, type, balance, description);
@@ -183,6 +195,7 @@ public class AccountsController {
 
             // Retrieve the controller
             AddAccountDIalog controller = loader.getController();
+            controller.setIdWallet(idWallet);
 
 
             Stage stage = new Stage();
@@ -197,8 +210,8 @@ public class AccountsController {
                 AccountService as =new AccountService();
                 WalletService ws = new WalletService();
                 TransactionService ts = new TransactionService();
-                int numberOfAccounts = as.countAccountsForWallet(1);
-                double totalBalance = ws.getTotalBalanceData(1);
+                int numberOfAccounts = as.countAccountsForWallet(idWallet);
+                double totalBalance = ws.getTotalBalanceData(idWallet);
                 int numberOfTransactions = ts.countTransactions();
 
                 setData(numberOfAccounts, totalBalance, numberOfTransactions);
@@ -237,7 +250,7 @@ public class AccountsController {
     }
 
     public void setData(int numberOfAccountsData, double totalBalanceData, int numberOfTransactionsData) {
-        updateCurrencySymbol(1);
+        updateCurrencySymbol(idWallet);
 
         nbrAccounts.setText(Integer.toString(numberOfAccountsData));
         totalBalance.setText(decimalFormat.format(totalBalanceData) +currencySymbol);

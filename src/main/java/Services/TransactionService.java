@@ -52,8 +52,9 @@ public class TransactionService implements ITransaction<Transaction> {
             updateAccountBalance(transaction.getFromAccount(), accountService.getAccountBalance(transaction.getFromAccount()) - transaction.getAmount());
 
             // Update the wallet's total balance
-            double newTotalBalanceExpense = walletService.getTotalBalanceData(1);
-            walletService.updateTotalBalance(newTotalBalanceExpense - transaction.getAmount());
+            int idWallet = accountService.getWalletIdForAccount(transaction.getFromAccount());
+            double newTotalBalanceExpense = walletService.getTotalBalanceData(idWallet);
+            walletService.updateTotalBalance(newTotalBalanceExpense - transaction.getAmount(),idWallet);
             updateMtDepense(transaction.getIdCategory(), transaction.getAmount());
 
         } else {
@@ -177,13 +178,17 @@ public class TransactionService implements ITransaction<Transaction> {
         // Retrieve the current totalBalance from the Wallet
 
         WalletService walletService = new WalletService();
-        double currentTotalBalance = walletService.getTotalBalanceData(1); // You need to implement this method
+        AccountService accountService = new AccountService();
+        int idWallet = accountService.getWalletIdForAccount(accountId);
+        double currentTotalBalance = walletService.getTotalBalanceData(idWallet); // You need to implement this method
 
         // Calculate the new totalBalance after adding the income
         double newTotalBalance = currentTotalBalance + incomeAmount;
 
+
+
         // Update the totalBalance in the Wallet
-        walletService.updateTotalBalance(newTotalBalance); // You need to implement this method
+        walletService.updateTotalBalance(newTotalBalance,idWallet); // You need to implement this method
     }
 
 
@@ -386,8 +391,10 @@ public class TransactionService implements ITransaction<Transaction> {
         updateAccountBalance(transaction.getFromAccount(), newFromAccountBalance);
 
         WalletService walletService = new WalletService();
+        AccountService accountService = new AccountService();
+        int idWallet = accountService.getWalletIdForAccount(transaction.getFromAccount());
         // Optionally, update the wallet total balance if needed
-        double walletTotalBalance = walletService.getTotalBalanceData(1);
+        double walletTotalBalance = walletService.getTotalBalanceData(idWallet);
         double newWalletTotalBalance = walletTotalBalance - transaction.getAmount();
 
         // Debugging statements
@@ -395,7 +402,7 @@ public class TransactionService implements ITransaction<Transaction> {
         System.out.println("Transaction Amount: " + transaction.getAmount());
         System.out.println("New Wallet Total Balance: " + newWalletTotalBalance);
 
-        walletService.updateTotalBalance(newWalletTotalBalance);
+        walletService.updateTotalBalance(newWalletTotalBalance,idWallet);
 
         // Delete the transaction from the database
         deleteTransactionFromDatabase(transaction.getId());

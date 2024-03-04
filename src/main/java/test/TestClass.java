@@ -92,7 +92,7 @@ public class TestClass {
 
 
         System.out.println(as.getAccountIdByName("e dinar "));
-        System.out.println(as.getAccountsNames());
+        ////System.out.println(as.getAccountsNames());
 
         System.out.println(ts.getTransactionById(63));
        // ts.deleteTransactionById(67);

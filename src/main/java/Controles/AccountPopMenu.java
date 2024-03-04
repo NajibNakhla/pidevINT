@@ -104,8 +104,9 @@ public class AccountPopMenu {
         AccountService as =new AccountService();
         WalletService ws = new WalletService();
         TransactionService ts = new TransactionService();
-        int numberOfAccounts = as.countAccountsForWallet(1);
-        double totalBalance = ws.getTotalBalanceData(1);
+        int idWallet = as.getWalletIdForAccount(accountId);
+        int numberOfAccounts = as.countAccountsForWallet(idWallet);
+        double totalBalance = ws.getTotalBalanceData(idWallet);
         int numberOfTransactions = ts.countTransactions();
 
         accountsController.setData(numberOfAccounts, totalBalance, numberOfTransactions);
